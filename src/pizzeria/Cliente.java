@@ -2,12 +2,19 @@ package pizzeria;
 
 public class Cliente {
 	// Atributos
+	
+	private static int idClienteAutoIncrement;
+	
+	private int idCliente;
 	private String nombre;
 	private String direccion;
 	private String email;
 	private int telefono;
 	private double dineroDisponible;
 	
+	public int getIdCliente() {
+		return idCliente;
+	}
 	// Constructores
 	public Cliente(String nombre, String direccion, String email, int telefono, double dineroDisponible) {
 		setNombre(nombre);
@@ -15,6 +22,7 @@ public class Cliente {
 		setEmail(email);
 		setTelefono(telefono);
 		setDineroDisponible(dineroDisponible);
+		this.idCliente=idClienteAutoIncrement++;
 	}
 	public Cliente(String nombre, String direccion, String email, int telefono) {
 		setNombre(nombre);
@@ -22,6 +30,7 @@ public class Cliente {
 		setEmail(email);
 		setTelefono(telefono);
 		this.dineroDisponible = 0.0;
+		this.idCliente=idClienteAutoIncrement++;
 	}
 	
 	// Getters y Setters
