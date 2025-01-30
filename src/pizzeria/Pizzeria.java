@@ -53,6 +53,13 @@ public class Pizzeria {
 
 	}
 
+	public void verPizzas() {
+		int i = 0;
+		for(Pizza p: listaPizzas) {
+			System.out.printf("\nPizza %d; %s",i,p.getNombre());
+			i++;
+		}
+	}
 	
 	public void consultarCliente(int telefono) {
 		boolean existe = false;
