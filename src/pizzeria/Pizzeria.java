@@ -84,22 +84,18 @@ public class Pizzeria {
 	}
 
 	public void verPizzas() {
-		int i = 0;
 		System.out.println("------------------------");
 		System.out.println("Pizzas Totales");
 		for(Pizza p: listaPizzas) {
-			System.out.printf("\nPizza %d: %s",i,p.getNombre());
-			i++;
+			System.out.printf("\nPizza %d: %s",p.getIdPizza(),p.getNombre());
 		}
 		System.out.println("------------------------");
 	}
 	public void verPedidos() {
-		int i = 0;
 		System.out.println("------------------------");
 		System.out.println("Pedidos Totales");
 		for(Pedido pe: listaPedidos) {
-			System.out.printf("\nNumero de Pedido %d: %s",i,pe.getId());
-			i++;
+			System.out.printf("\nNumero de Pedido: %d",pe.getId());
 		}
 		System.out.println("------------------------");
 	}
