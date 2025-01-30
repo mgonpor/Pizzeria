@@ -63,7 +63,18 @@ public class Pizzeria {
 			}
 		}
 		if(!existe) {
-			System.out.printf("\nNo se ha encontrado un cliente.");
+			System.out.printf("\nNo se ha encontrado un cliente con ese numero.");
+		}
+	}
+	public void consultarPizzaCon(String ingrediente) {
+		boolean existe = false;
+		for(Pizza p:listaPizzas) {
+			if(p.getIngredientes().contains(ingrediente.toUpperCase())){
+				System.out.printf("\nLa pizza %s tiene %s", p.getNombre(), ingrediente);
+			}
+		}
+		if(!existe) {
+			System.out.printf("\nNo se ha encontrado una pizza con %s.", ingrediente);
 		}
 	}
 	
