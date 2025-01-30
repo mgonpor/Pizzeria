@@ -1,6 +1,10 @@
 package pizzeria;
 
 public class Pizza {
+
+	private static Pizza masBarata;
+	private static Pizza masCara;
+
 	private String nombre;
 	private String ingredientes;
 	private double precio;
@@ -10,6 +14,29 @@ public class Pizza {
 		setNombre(nombre);
 		setPrecio(precio);
 
+		if (masBarata == null) {
+			masBarata = this;
+		}
+		if (this.precio < masBarata.precio) {
+			masBarata = this;
+
+		}
+
+		if (masCara == null) {
+			masCara = this;
+		}
+		if (this.precio > masCara.precio) {
+			masCara = this;
+		}
+
+	}
+
+	public static Pizza getMasBarata() {
+		return masBarata;
+	}
+
+	public static Pizza getMasCara() {
+		return masCara;
 	}
 
 	public String getNombre() {
