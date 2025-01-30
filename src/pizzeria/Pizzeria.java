@@ -84,12 +84,10 @@ public class Pizzeria {
 		System.out.println("------------------------");
 	}
 	public void verPedidos() {
-		int i = 0;
 		System.out.println("------------------------");
 		System.out.println("Pedidos Totales");
 		for(Pedido pe: listaPedidos) {
-			System.out.printf("\nNumero de Pedido %d: %s",i,pe.getId());
-			i++;
+			System.out.printf("\nNumero de Pedido: %d",pe.getId());
 		}
 		System.out.println("------------------------");
 	}
