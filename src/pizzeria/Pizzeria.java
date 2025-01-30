@@ -128,7 +128,7 @@ public class Pizzeria {
 		System.out.println("------------------------");
 		System.out.println("Pedidos Totales");
 		for(Pedido pe: listaPedidos) {
-			System.out.printf("\nNumero de Pedido: %d",pe.getId());
+			System.out.printf("\nNumero de Pedido: %d, cliente: %s",pe.getId(), pe.getCliente().getNombre());
 		}
 		System.out.println("------------------------");
 	}

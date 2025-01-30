@@ -16,6 +16,7 @@ public class Pedido {
 	private List<Pizza> pizzas;
 	
 	private static int ultimoId = 0;
+	private static Pedido ultimoPedido;
 	
 	
 	public Pedido(Cliente cliente, LocalDate fecha, String tipo) {   
@@ -24,6 +25,7 @@ public class Pedido {
 		setFecha(fecha);
 		setTipo(tipo);
 		this.pizzas = new ArrayList<Pizza>();
+		ultimoPedido = this;
 	}
 	public int getId() {
 		return id;
@@ -43,6 +45,9 @@ public class Pedido {
 	public List<Pizza> getPizzas(){
 		return pizzas;
 	}
+	public static Pedido getUltimoPedido() {
+		return ultimoPedido;
+	}
 	
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
@@ -53,6 +58,8 @@ public class Pedido {
 	public void setTipo(String tipo) {
 		this.tipo = Tipo.valueOf(tipo.toUpperCase());
 	}
+	
+	
 	
 	public void addPizza(Pizza pizza) {
 		this.pizzas.add(pizza);
