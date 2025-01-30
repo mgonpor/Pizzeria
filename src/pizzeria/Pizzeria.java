@@ -29,7 +29,17 @@ public class Pizzeria {
 	}
 
 	public void addPizza(Pizza pizza) {
-		this.listaPizzas.add(pizza);
+		boolean encontrado=false;
+		for(Pizza i : this.listaPizzas) {
+			if(i.getIdPizza()==pizza.getIdPizza()) {
+				encontrado=true;
+			}
+		}
+		if(encontrado) {
+			throw new IllegalArgumentException("Esta pizza ya está añadida");
+		}
+		
+		this.listaPizzas.remove(pizza);	
 	}
 
 	public void removePizza(Pizza pizza) {
@@ -49,6 +59,17 @@ public class Pizzeria {
 
 
 	public void addCliente(Cliente cliente) {
+		boolean encontrado=false;
+		for(Cliente i : this.listaClientes) {
+			if(i.getIdCliente()==cliente.getIdCliente()) {
+				encontrado=true;
+			}
+		}
+		if(encontrado) {
+			throw new IllegalArgumentException("Este cliente ya está añadido");
+		}
+		
+		
 		this.listaClientes.add(cliente);
 	}
 
@@ -67,6 +88,15 @@ public class Pizzeria {
 	}
 
 	public void addPedido(Pedido pedido) {
+		boolean encontrado=false;
+		for(Pedido i : this.listaPedidos) {
+			if(i.getId()==pedido.getId()) {
+				encontrado=true;
+			}
+		}
+		if(encontrado) {
+			throw new IllegalArgumentException("Este pedido ya está añadido");
+		}
 		this.listaPedidos.add(pedido);
 
 	}
