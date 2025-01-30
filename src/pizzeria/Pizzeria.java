@@ -74,12 +74,10 @@ public class Pizzeria {
 	}
 
 	public void verPizzas() {
-		int i = 0;
 		System.out.println("------------------------");
 		System.out.println("Pizzas Totales");
 		for(Pizza p: listaPizzas) {
-			System.out.printf("\nPizza %d: %s",i,p.getNombre());
-			i++;
+			System.out.printf("\nPizza %d: %s",p.getIdPizza(),p.getNombre());
 		}
 		System.out.println("------------------------");
 	}
