@@ -3,7 +3,7 @@ package pizzeria;
 public class Cliente {
 	// Atributos
 	
-	private static int idClienteAutoIncrement;
+	private static int idClienteAutoIncrement = 1;
 	
 	private int idCliente;
 	private String nombre;
