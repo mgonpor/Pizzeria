@@ -1,7 +1,10 @@
 package pizzeria;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
+import enumerados.Tipo;
 
 public class Pizzeria {
 	private String nombre;
@@ -126,13 +129,56 @@ public class Pizzeria {
 		for(Pizza p:listaPizzas) {
 			if(p.getIngredientes().contains(ingrediente.toUpperCase())){
 				System.out.printf("\nLa pizza %s tiene %s", p.getNombre(), ingrediente);
+				existe = true;
 			}
 		}
 		if(!existe) {
 			System.out.printf("\nNo se ha encontrado una pizza con %s.", ingrediente);
 		}
 	}
-	
-	
+	public void consultarPizzaSin(String ingrediente) {
+		boolean existe = false;
+		for(Pizza p:listaPizzas) {
+			if(!p.getIngredientes().contains(ingrediente.toUpperCase())){
+				System.out.printf("\nLa pizza %s no tiene %s", p.getNombre(), ingrediente);
+				existe = true;
+			}
+		}
+		if(!existe) {
+			System.out.printf("\nTodas las pizzas tienen %s", ingrediente);
+		}
+	}
+	public void consultarPedidosHoy() {
+		System.out.printf("\nPedidos de hoy: ");
+		for(Pedido p:listaPedidos) {
+			if(p.getFecha().getDayOfYear() == LocalDate.now().getDayOfYear()) {
+				System.out.printf("\nId: %d, cliente: %s", p.getId(), p.getCliente().getNombre());
+			}
+		}
+	}
+	public void consultarPedidosLocal() {
+		System.out.printf("\nPedidos en el local: ");
+		for(Pedido p:listaPedidos) {
+			if(Tipo.valueOf(p.getTipo()) == Tipo.LOCAL) {
+				System.out.printf("\nId: , cliente: %s", p.getId(), p.getCliente());
+			}
+		}
+	}
+	public void consultarPedidosRecoger() {
+		System.out.printf("\nPedidos en para recoger: ");
+		for(Pedido p:listaPedidos) {
+			if(Tipo.valueOf(p.getTipo()) == Tipo.RECOGER) {
+				System.out.printf("\nId: , cliente: %s", p.getId(), p.getCliente());
+			}
+		}
+	}
+	public void consultarPedidosDomicilio() {
+		System.out.printf("\nPedidos a domicilio: ");
+		for(Pedido p:listaPedidos) {
+			if(Tipo.valueOf(p.getTipo()) == Tipo.DOMICILIO) {
+				System.out.printf("\nId: , cliente: %s", p.getId(), p.getCliente());
+			}
+		}
+	}
 
 }
