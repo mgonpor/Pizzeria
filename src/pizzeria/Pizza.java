@@ -1,21 +1,21 @@
 package pizzeria;
 
+import enumerados.TipoPizza;
+
 public class Pizza {
 
 	private static Pizza masBarata;
 	private static Pizza masCara;
-	
-	private static int idAutoIncrement;
-	private int idPizza;
+
 	private String nombre;
 	private String ingredientes;
 	private double precio;
+	private TipoPizza tipoPizza;
 
 	public Pizza(String nombre, double precio, String ingredientes) {
 		setIngredientes(ingredientes);
 		setNombre(nombre);
 		setPrecio(precio);
-		this.idPizza=idAutoIncrement++;
 
 		if (masBarata == null) {
 			masBarata = this;
@@ -34,10 +34,6 @@ public class Pizza {
 
 	}
 
-	public int getIdPizza() {
-		return idPizza;
-	}
-
 	public static Pizza getMasBarata() {
 		return masBarata;
 	}
@@ -48,6 +44,13 @@ public class Pizza {
 
 	public String getNombre() {
 		return nombre;
+	}
+	
+	public String getTipoPizza() {
+		return tipoPizza.toString();
+	}
+	public void setTipoPizza() {
+		
 	}
 
 	public void setNombre(String nombre) {
