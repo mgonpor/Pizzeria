@@ -12,9 +12,7 @@ public class Cliente {
 	private int telefono;
 	private double dineroDisponible;
 	
-	public int getIdCliente() {
-		return idCliente;
-	}
+	
 	// Constructores
 	public Cliente(String nombre, String direccion, String email, int telefono, double dineroDisponible) {
 		setNombre(nombre);
@@ -78,6 +76,9 @@ public class Cliente {
 			throw new IllegalArgumentException("El dinero disponible no puede ser negativo");
 		}
 		this.dineroDisponible = dineroDisponible;
+	}
+	public int getIdCliente() {
+		return idCliente;
 	}
 	
 }
