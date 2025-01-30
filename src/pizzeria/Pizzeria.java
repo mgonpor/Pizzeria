@@ -55,12 +55,34 @@ public class Pizzeria {
 
 	public void verPizzas() {
 		int i = 0;
+		System.out.println("------------------------");
+		System.out.println("Pizzas Totales");
 		for(Pizza p: listaPizzas) {
-			System.out.printf("\nPizza %d; %s",i,p.getNombre());
+			System.out.printf("\nPizza %d: %s",i,p.getNombre());
 			i++;
 		}
+		System.out.println("------------------------");
 	}
-	
+	public void verPedidos() {
+		int i = 0;
+		System.out.println("------------------------");
+		System.out.println("Pedidos Totales");
+		for(Pedido pe: listaPedidos) {
+			System.out.printf("\nNumero de Pedido %d: %s",i,pe.getId());
+			i++;
+		}
+		System.out.println("------------------------");
+	}
+	public void verClientes() {
+		int i = 0;
+		System.out.println("------------------------");
+		System.out.println("Clientes");
+		for(Cliente c: listaClientes) {
+			System.out.printf("\nCliente %d: %s",i,c.getNombre());
+			i++;
+		}
+		System.out.println("------------------------");
+	}
 	public void consultarCliente(int telefono) {
 		boolean existe = false;
 		for(Cliente elem:listaClientes) {
