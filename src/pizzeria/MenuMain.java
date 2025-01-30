@@ -7,9 +7,9 @@ public class MenuMain {
 
 	public static void menuPizza() {
 		System.out.println("~PIZZAS~");
-		System.out.println("Escoga una opción:\n" + "1. Nueva Piezza\n" + "2. Ver Pizzas\n"
-				+ "3. Buscar Pizzas con Ingredientes\n" + "4. Buscar Pizzas sin Ingredientes\n" + "5. Pizza más Cara\n"
-				+ "6. Pizza más Barata\n" + "7. Volver");
+		System.out.println("Escoga una opción:\n" + "1. Nueva Piezza\n" +"2. Eliminar Pizza" +"3. Ver Pizzas\n"
+				+ "4. Buscar Pizzas con Ingredientes\n" + "5. Buscar Pizzas sin Ingredientes\n" + "6. Pizza más Cara\n"
+				+ "7. Pizza más Barata\n" + "8. Volver");
 	}
 
 	public static void menuPedidos() {
@@ -23,4 +23,14 @@ public class MenuMain {
 				+ "7. Último pedido Realizado\n"
 				+ "8. Volver");
 	}
+	
+	public static void menuCliente() {
+		System.out.println("\n~CLIENTES~");
+		System.out.println("1. Nuevo Cliente\n"
+				+ "2. Ver Clientes\n"
+				+ "3. Eliminar Cliente\n"
+				+ "4. Consultar Cliente por su teléfono\n"
+				+ "5. Volver");
+	}
+	
 }

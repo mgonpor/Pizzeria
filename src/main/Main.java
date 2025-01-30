@@ -11,6 +11,7 @@ public class Main {
 		int mMain;
 		int mPizza;
 		int mPedido;
+		int mCliente;
 
 		System.out.println("Bienvenido a la Pizzeria del EquipoA");
 		pizzeria.MenuMain.menu();
@@ -22,13 +23,21 @@ public class Main {
 				pizzeria.MenuMain.menuPizza();
 				mPizza = sca.nextInt();
 				switch (mPizza) {
-				case 1:
+				case 1: 
+					break;
 				case 2:
+					break;
 				case 3:
+					break;
 				case 4:
+					break;
 				case 5:
+					break;
 				case 6:
+					break;
 				case 7:
+					break;
+				case 8:
 					pizzeria.MenuMain.menu();
 					break;
 				default:
@@ -41,12 +50,19 @@ public class Main {
 				mPedido = sca.nextInt();
 				switch (mPedido) {
 				case 1:
+					break;
 				case 2:
+					break;
 				case 3:
+					break;
 				case 4:
+					break;
 				case 5:
+					break;
 				case 6:
+					break;
 				case 7:
+					break;
 				case 8:
 					pizzeria.MenuMain.menu();
 					break;
@@ -55,6 +71,24 @@ public class Main {
 					pizzeria.MenuMain.menuPedidos();
 					break;
 				}
+			} else if (mMain == 3) {
+				pizzeria.MenuMain.menuCliente();
+				mCliente = sca.nextInt();
+				switch(mCliente) {
+				case 1:
+					break;
+				case 2:
+					break;
+				case 3:
+					break;
+				case 4:
+					break;
+				case 5:
+					break;
+				default:
+						
+				}
+
 			}
 		} while (mMain != 4);
 	}
