@@ -3,35 +3,62 @@ package main;
 import java.util.Scanner;
 
 import pizzeria.Pizza;
-import pizzeria.Pizzeria;
 
 public class Main {
 
 	public static void main(String[] args) {
 		Scanner sca = new Scanner(System.in);
-		int m1;
-		
+		int mMain;
+		int mPizza;
+		int mPedido;
+
 		System.out.println("Bienvenido a la Pizzeria del EquipoA");
+		pizzeria.MenuMain.menu();
 		do {
-		m1 = sca.nextInt();
-		
-		if(m1 == 1) {
-			System.out.println("PIZZAS");
-			System.out.println("Escoga una opciï¿½n:\n"
-					+ "1. Nueva Piezza\n"
-					+ "2. Ver Pizzas\n"
-					+ "3. Buscar Pizzas con Ingredientes\n"
-					+ "4. Buscar Pizzas sin Ingredientes\n"
-					+ "5. Pizza mï¿½s Cara\n"
-					+ "6. Pizza mï¿½s Barata\n"
-					+ "7. Volver");
-			int m2 = sca.nextInt();
-			if(m2 == 7) {
+
+			mMain = sca.nextInt();
+
+			if (mMain == 1) {
+				pizzeria.MenuMain.menuPizza();
+				mPizza = sca.nextInt();
+				switch (mPizza) {
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+				case 7:
+					pizzeria.MenuMain.menu();
+					break;
+				default:
+					System.out.println("\n\nIntroduce una opción correcta: ");
+					pizzeria.MenuMain.menuPizza();
+					break;
+				}
+			} else if (mMain == 2) {
+				pizzeria.MenuMain.menuPedidos();
+				mPedido = sca.nextInt();
+				switch (mPedido) {
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+					pizzeria.MenuMain.menu();
+					break;
+				default:
+					System.out.println("\n\nIntroduce una opción correcta: ");
+					pizzeria.MenuMain.menuPedidos();
+					break;
+				}
 			}
-		}
-		}while(m1 != 4);
+		} while (mMain != 4);
 	}
-	
+
 	public static Pizza nuevaPizza(Scanner sc) {
 		System.out.print("nombre ");
 		String nombre = sc.next();
