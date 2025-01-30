@@ -56,7 +56,7 @@ public class Cliente {
 		return telefono;
 	}
 	public void setTelefono(int telefono) {
-		if(telefono > 100000000 || telefono < 0) {
+		if(telefono > 1000000000 || telefono < 0) {
 			throw new IllegalArgumentException("El telefono no es válido");
 		}
 		this.telefono = telefono;
