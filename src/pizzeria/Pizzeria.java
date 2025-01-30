@@ -33,6 +33,7 @@ public class Pizzeria {
 		this.listaPizzas.remove(pizza);
 	}
 
+
 	public void addCliente(Cliente cliente) {
 		this.listaClientes.add(cliente);
 	}
@@ -51,4 +52,21 @@ public class Pizzeria {
 		this.listaPedidos.remove(pedido);
 
 	}
+
+	
+	public void consultarCliente(int telefono) {
+		boolean existe = false;
+		for(Cliente elem:listaClientes) {
+			if(elem.getTelefono() == telefono) {
+				existe=true;
+				System.out.printf("\n%s", elem.getNombre());
+			}
+		}
+		if(!existe) {
+			System.out.printf("\nNo se ha encontrado un cliente.");
+		}
+	}
+	
+	
+
 }
