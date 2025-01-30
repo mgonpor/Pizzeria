@@ -5,20 +5,18 @@ public class Cliente {
 	private String nombre;
 	private String direccion;
 	private String email;
-	private String telefono;
+	private int telefono;
 	private double dineroDisponible;
 	
 	// Constructores
-	public Cliente(String nombre, String direccion, String email, String telefono, double dineroDisponible) {
-		super();
+	public Cliente(String nombre, String direccion, String email, int telefono, double dineroDisponible) {
 		setNombre(nombre);
 		setDireccion(direccion);
 		setEmail(email);
 		setTelefono(telefono);
 		setDineroDisponible(dineroDisponible);
 	}
-	public Cliente(String nombre, String direccion, String email, String telefono) {
-		super();
+	public Cliente(String nombre, String direccion, String email, int telefono) {
 		setNombre(nombre);
 		setDireccion(direccion);
 		setEmail(email);
@@ -54,12 +52,12 @@ public class Cliente {
 		}
 		this.email = email;
 	}
-	public String getTelefono() {
+	public int getTelefono() {
 		return telefono;
 	}
-	public void setTelefono(String telefono) {
-		if(telefono == null || telefono.isBlank()) {
-			throw new IllegalArgumentException("El telefono no puede ser nulo o estar vacío");
+	public void setTelefono(int telefono) {
+		if(telefono > 100000000 || telefono < 0) {
+			throw new IllegalArgumentException("El telefono no es válido");
 		}
 		this.telefono = telefono;
 	}
