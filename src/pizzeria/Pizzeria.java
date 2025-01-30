@@ -25,4 +25,11 @@ public class Pizzeria {
 		this.nombre = nombre;
 	}
  
+	public void addPizza(Pizza pizza){
+		this.listaPizzas.add(pizza);
+	}
+	public void removePizza(Pizza pizza) {
+		
+		this.listaPizzas.remove(pizza);
+	}
 }
