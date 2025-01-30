@@ -82,7 +82,7 @@ public class Pedido {
 			throw new IllegalArgumentException("El pedido está vacío.");
 		}
 		for(Pizza p:pizzas) {
-			
+			this.total += p.getPrecio();
 		}
 	}
 }
