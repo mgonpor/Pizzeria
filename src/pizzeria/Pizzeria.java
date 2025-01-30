@@ -30,7 +30,18 @@ public class Pizzeria {
 	}
 
 	public void removePizza(Pizza pizza) {
-		this.listaPizzas.remove(pizza);
+		boolean encontrado=false;
+		for(Pizza i : this.listaPizzas) {
+			if(i.getIdPizza()==pizza.getIdPizza()) {
+				encontrado=true;
+			}
+		}
+		if(!encontrado) {
+			throw new IllegalArgumentException("Esta pizza no está añadida");
+		}
+		
+		this.listaPizzas.remove(pizza);	
+		
 	}
 
 
@@ -39,8 +50,17 @@ public class Pizzeria {
 	}
 
 	public void removeCliente(Cliente cliente) {
-		this.listaClientes.remove(cliente);
-
+		boolean encontrado=false;
+		for(Cliente i : this.listaClientes) {
+			if(i.getIdPizza()==cliente.getIdPizza()) {
+				encontrado=true;
+			}
+		}
+		if(!encontrado) {
+			throw new IllegalArgumentException("Esta pizza no está añadida");
+		}
+		
+		this.listaPizzas.remove(pizza);	
 	}
 
 	public void addPedido(Pedido pedido) {

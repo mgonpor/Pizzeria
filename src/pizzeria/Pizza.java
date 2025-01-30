@@ -4,7 +4,9 @@ public class Pizza {
 
 	private static Pizza masBarata;
 	private static Pizza masCara;
-
+	
+	private static int idAutoIncrement;
+	private int idPizza;
 	private String nombre;
 	private String ingredientes;
 	private double precio;
@@ -13,6 +15,7 @@ public class Pizza {
 		setIngredientes(ingredientes);
 		setNombre(nombre);
 		setPrecio(precio);
+		this.idPizza=idAutoIncrement++;
 
 		if (masBarata == null) {
 			masBarata = this;
@@ -29,6 +32,10 @@ public class Pizza {
 			masCara = this;
 		}
 
+	}
+
+	public int getIdPizza() {
+		return idPizza;
 	}
 
 	public static Pizza getMasBarata() {

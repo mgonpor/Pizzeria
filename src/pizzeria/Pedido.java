@@ -15,7 +15,7 @@ public class Pedido {
 	private Tipo tipo;
 	private List<Pizza> pizzas;
 	
-	private static int ultimoId = 1;
+	private static int ultimoId = 0;
 	
 	
 	public Pedido(Cliente cliente, LocalDate fecha, String tipo) {   
