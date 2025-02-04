@@ -28,7 +28,7 @@ public class Main {
 				equipoA.verClientes();
 				System.out.print("\nIndique qué cliente es: ");
 				int cliente = sca.nextInt();
-				menuCliente(equipoA, cliente, sca);
+				menuCliente(equipoA, cliente, sca, equipoA.getClientePorId(cliente));
 			default:
 				System.out.print("\nElige una opción válida: ");
 			}
@@ -146,22 +146,20 @@ public class Main {
 		} while (eleccion != 17);
 	}
 
-	public static void menuCliente(Pizzeria pizzeria, int id, Scanner sca) {
+	public static void menuCliente(Pizzeria pizzeria, int id, Scanner sca, Cliente cliente) {
 
 		int eleccion;
 		do {
-			System.out.printf("Bienvenido soldado. Prepárate!");
+			System.out.printf("\n----------------------"
+					+ "\nBienvenido soldado. Prepárate!");
 			System.out.printf("\n1. Realizar un pedido" + "\n2. Ver pizzas" + "\n3. Buscar pizza sin ingrediente"
 					+ "\n4. Buscar pizza con ingrediente" + "\n5. Volver");
 			eleccion = sca.nextInt();
 			switch (eleccion) {
 			case 1:
-				System.out.printf("Cliente (ID): ");
-				int clienteP = sca.nextInt();
-				Cliente cc = pizzeria.getClientePorId(clienteP);
 				System.out.print("Tipo (local, recoger, domicilio): ");
 				String tipo = sca.next();
-				Pedido pedido = new Pedido(cc, LocalDate.now(), tipo);
+				Pedido pedido = new Pedido(cliente, LocalDate.now(), tipo);
 				int opcion=0;
 				do {
 					System.out.println("\nDime la pizza que quieras añadir (0 finaliza pedido): ");
