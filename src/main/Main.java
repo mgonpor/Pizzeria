@@ -13,7 +13,8 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sca = new Scanner(System.in);
 		int mMain;
-		System.out.println("Bienvenido a la Pizzeria del EquipoA");
+		System.out.println("Bienvenido a la Pizzeria del EquipoA!"
+				+ "\n----------------------------------------");
 		Pizzeria equipoA = new Pizzeria("equipoA");
 		do {
 			System.out.print("\nEscoga una opción:\n" + "1. Admin\n" + "2. Cliente");
@@ -51,8 +52,28 @@ public class Main {
 			eleccion = sca.nextInt();
 			switch (eleccion) {
 			case 1:
+				System.out.print("\nNombre: ");
+				String nombre = sca.next();
+				System.out.print("\nPrecio: ");
+				double precio = sca.nextDouble();
+				System.out.print("\nIngredientes: ");
+				String ingredientes = sca.next();
+				Pizza pizza = new Pizza(nombre, precio, ingredientes);
+				pizzeria.addPizza(pizza);
 				break;
 			case 2:
+				System.out.print("\nNombre: ");
+				String nombreC = sca.next();
+				System.out.print("\nDireccion: ");
+				String direccion = sca.next();
+				System.out.print("\nEmail: ");
+				String email = sca.next();
+				System.out.print("\nTelefono: ");
+				int tel = sca.nextInt();
+				System.out.print("\nDinero disponible: ");
+				double dineroDisponible = sca.nextDouble();
+				Cliente cliente = new Cliente(nombreC, direccion, email, tel, dineroDisponible);
+				pizzeria.addCliente(cliente);
 				break;
 			case 3:
 				System.out.printf("Cliente (ID): ");
@@ -74,8 +95,8 @@ public class Main {
 				break;
 			case 7:
 				System.out.print("\nIndique el telefono: ");
-				int tel = sca.nextInt();
-				pizzeria.consultarCliente(tel);
+				int telBuscar = sca.nextInt();
+				pizzeria.consultarCliente(telBuscar);
 				break;
 			case 8:
 				System.out.printf("\nIngrediente a buscar: ");
@@ -121,13 +142,12 @@ public class Main {
 
 		int eleccion;
 		do {
-			System.out.println("\n~CLIENTES~");
-			System.out.println("1. Realizar un pedido\n" + "2. Ver pizzas\n" + "3. Buscar pizza sin ingrediente\n"
-					+ "4. Buscar pizza con ingrediente\n" + "5. Volver");
+			System.out.printf("Bienvenido soldado. Prepárate!");
+			System.out.printf("\n1. Realizar un pedido" + "\n2. Ver pizzas" + "3. Buscar pizza sin ingrediente\n"
+					+ "\n4. Buscar pizza con ingrediente" + "\n5. Volver");
 			eleccion = sca.nextInt();
 			switch (eleccion) {
 			case 1:
-				Pedido p1= new Pedido(null, null, null);
 				break;
 			case 2:
 				break;
@@ -140,7 +160,7 @@ public class Main {
 				System.out.print("\nCliente saliendo...");
 				break;
 			default:
-				System.out.print("\nElige entre 1 y 17.");
+				System.out.print("\nElige entre 1 y 5.");
 
 			}
 		} while (eleccion != 5);
