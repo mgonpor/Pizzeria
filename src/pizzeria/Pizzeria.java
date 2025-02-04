@@ -130,6 +130,7 @@ public class Pizzeria {
 		System.out.print("\nPedidos Totales");
 		for(Pedido pe: listaPedidos) {
 			System.out.printf("\nNumero de Pedido: %d, cliente: %s",pe.getId(), pe.getCliente().getNombre());
+			pe.mostrarPizzasDelPedido();
 		}
 		System.out.print("\n------------------------");
 	}
@@ -237,7 +238,7 @@ public class Pizzeria {
 	}
 	public void mostrarPizza(Pizza p) {
 		if(p == null) {
-			System.out.printf("\nNo puede ser nula");
+			System.out.printf("\nLa pizza no puede ser nula");
 		}else {
 			System.out.printf("\nID: %d "
 					+ "\nNombre: %s, "
@@ -248,7 +249,7 @@ public class Pizzeria {
 	
 	public void mostrarPedido(Pedido pe) {
 		if(pe == null) {
-			System.out.printf("\nNo puede ser nula");
+			System.out.printf("\nEl pedido no puede ser nulo");
 		}else {
 			System.out.printf("\nID: %d "
 					+ "\nCliente: %s, "

@@ -46,6 +46,9 @@ public class Pedido {
 		return pizzas;
 	}
 	public static Pedido getUltimoPedido() {
+		if(ultimoPedido==null) {
+			System.out.print("No se ha hecho ningun pedido");
+		}
 		return ultimoPedido;
 	}
 	
@@ -90,6 +93,16 @@ public class Pedido {
 		}
 		for(Pizza p:pizzas) {
 			this.total += p.getPrecio();
+		}
+	}
+	
+	public void mostrarPizzasDelPedido() {
+		if(pizzas.size()<=0) {
+			System.out.printf("\nNinguna añadida aún");
+		}
+		for(Pizza p:pizzas) {
+			System.out.printf("\nID: %d, Nombre: %s, Precio: %.02f"
+					+ "\nIngredientes: %s",p.getIdPizza(),p.getNombre(),p.getPrecio(),p.getIngredientes());
 		}
 	}
 }

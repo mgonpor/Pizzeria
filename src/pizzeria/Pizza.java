@@ -35,10 +35,16 @@ public class Pizza {
 	}
 
 	public static Pizza getMasBarata() {
+		if(masBarata == null) {
+			System.out.print("No hay pizzas añadidas");
+		}
 		return masBarata;
 	}
 
 	public static Pizza getMasCara() {
+		if(masCara == null) {
+			System.out.print("No hay pizzas añadidas");
+		}
 		return masCara;
 	}
 
