@@ -1,7 +1,5 @@
 package pizzeria;
 
-import enumerados.TipoPizza;
-
 public class Pizza {
 
 	private static Pizza masBarata;
@@ -82,4 +80,8 @@ public class Pizza {
 
 	}
 
+	public void mostrarPizza(Pizza p) {
+		System.out.printf("ID %d, %s, %.02f"
+				+ "\nIngredientes: %s");
+	}
 }

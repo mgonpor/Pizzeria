@@ -8,6 +8,7 @@ import enumerados.Tipo;
 
 public class Pizzeria {
 	private String nombre;
+	
 	private List<Pizza> listaPizzas;
 	private List<Pedido> listaPedidos;
 	private List<Cliente> listaClientes;
@@ -133,21 +134,20 @@ public class Pizzeria {
 		System.out.println("------------------------");
 	}
 	public void verClientes() {
-		int i = 0;
 		System.out.println("------------------------");
 		System.out.println("Clientes");
 		for(Cliente c: listaClientes) {
-			System.out.printf("\nCliente %d: %s",i,c.getNombre());
-			i++;
+			System.out.printf("\nCliente %d: %s",c.getIdCliente(),c.getNombre());
 		}
 		System.out.println("------------------------");
 	}
+	
 	public void consultarCliente(int telefono) {
 		boolean existe = false;
 		for(Cliente elem:listaClientes) {
 			if(elem.getTelefono() == telefono) {
 				existe=true;
-				System.out.printf("\n%s", elem.getNombre());
+				System.out.printf("\n%d:%s",elem.getIdCliente(), elem.getNombre());
 			}
 		}
 		if(!existe) {
