@@ -35,7 +35,7 @@ public class Main {
 		} while (mMain != 4);
 	}
 
-	public static void menuAdmin(Pizzeria p, String password) {
+	public static void menuAdmin(Pizzeria pizzeria, String password) {
 		Scanner sca = new Scanner(System.in);
 		if (!password.equals("vladi")) {
 			throw new IllegalArgumentException("\nContraseña incorrecta");
@@ -64,49 +64,49 @@ public class Main {
 				pizzeria.addPedido(pedido);
 				break;
 			case 4:
-				p.verPizzas();
+				pizzeria.verPizzas();
 				break;
 			case 5:
-				p.verPedidos();
+				pizzeria.verPedidos();
 				break;
 			case 6:
-				p.verClientes();
+				pizzeria.verClientes();
 				break;
 			case 7:
 				System.out.print("\nIndique el telefono: ");
 				int tel = sca.nextInt();
-				p.consultarCliente(tel);
+				pizzeria.consultarCliente(tel);
 				break;
 			case 8:
 				System.out.printf("\nIngrediente a buscar: ");
 				String ingr = sca.next();
-				p.consultarPizzaCon(ingr);
+				pizzeria.consultarPizzaCon(ingr);
 				break;
 			case 9:
 				System.out.print("\ningrediente a evitar: ");
 				String ingr2 = sca.next();
-				p.consultarPizzaSin(ingr2);
+				pizzeria.consultarPizzaSin(ingr2);
 				break;
 			case 10:
-				p.consultarPedidosHoy();
+				pizzeria.consultarPedidosHoy();
 				break;
 			case 11:
-				p.consultarPedidosLocal();
+				pizzeria.consultarPedidosLocal();
 				break;
 			case 12:
-				p.consultarPedidosRecoger();
+				pizzeria.consultarPedidosRecoger();
 				break;
 			case 13:
-				p.consultarPedidosDomicilio();
+				pizzeria.consultarPedidosDomicilio();
 				break;
 			case 14:
-				pizzeria.mostrarPizza(pizza.getMasBarata());
+				pizzeria.mostrarPizza(Pizza.getMasBarata());
 				break;
 			case 15:
-				pizzeria.mostrarPizza(pizza.getMasCara());
+				pizzeria.mostrarPizza(Pizza.getMasCara());
 				break;
 			case 16:
-				pizzeria.mostrarPedido(pedido.getUltimoPedido());
+				pizzeria.mostrarPedido(Pedido.getUltimoPedido());
 				break;
 			case 17:
 				System.out.print("\nAdmin saliendo...");
