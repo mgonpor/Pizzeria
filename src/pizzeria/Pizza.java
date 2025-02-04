@@ -80,8 +80,5 @@ public class Pizza {
 
 	}
 
-	public void mostrarPizza(Pizza p) {
-		System.out.printf("ID %d, %s, %.02f"
-				+ "\nIngredientes: %s");
-	}
+	
 }

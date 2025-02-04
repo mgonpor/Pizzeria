@@ -210,5 +210,18 @@ public class Pizzeria {
 			}
 		}
 	}
+	public void mostrarPizza(Pizza p) {
+		System.out.printf("\nID: %d "
+				+ "\nNombre: %s, "
+				+ "\nPrecio: %.02f"
+				+ "\nIngredientes: %s",p.getIdPizza(),p.getNombre(),p.getPrecio(),p.getIngredientes());
+	}
+	
+	public void mostrarPedido(Pedido pe) {
+		System.out.printf("\nID: %d "
+				+ "\nCliente: %s, "
+				+ "\nFecha: %.s"
+				+ "\nTipo: %s",pe.getId(),pe.getFecha(),pe.getTipo());
+	}
 
 }

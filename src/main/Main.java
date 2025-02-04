@@ -101,10 +101,13 @@ public class Main {
 				p.consultarPedidosDomicilio();
 				break;
 			case 14:
+				p.mostrarPizza(Pizza.getMasBarata());
 				break;
-			case 15: 
+			case 15:
+				p.mostrarPizza(Pizza.getMasCara());
 				break;
 			case 16:
+				p.mostrarPedido(Pedido.getUltimoPedido());
 				break;
 			case 17:
 				System.out.print("\nAdmin saliendo...");
