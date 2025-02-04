@@ -90,9 +90,10 @@ public class Main {
 			case 3:
 				System.out.printf("Cliente (ID): ");
 				int clienteP = sca.nextInt();
+				Cliente cc = pizzeria.getClientePorId(clienteP);
 				System.out.print("Tipo (local, recoger, domicilio): ");
 				String tipo = sca.next();
-				Pedido pedido = new Pedido(clienteP, LocalDate.now(), tipo);
+				Pedido pedido = new Pedido(cc, LocalDate.now(), tipo);
 				pizzeria.addPedido(pedido);
 				break;
 			case 4:
