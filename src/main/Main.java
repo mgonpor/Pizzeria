@@ -112,12 +112,20 @@ public class Main {
 		do {
 			System.out.println("\n~CLIENTES~");
 			System.out.println("1. Realizar un pedido\n" + "2. Ver pizzas\n" + "3. Buscar pizza sin ingrediente\n"
+<<<<<<< Updated upstream
 					+ "4. Buscar pizza con ingrediente\n" + "4. Buscar pizza con ingrediente\n" + "5. Volver");
 			eleccion = sca.nextInt();
 			switch (eleccion) {
 			case 1:
 				Pedido p1 = new Pedido(null, null, null);
 				p.addPedido(p1);
+=======
+					+ "4. Buscar pizza con ingrediente\n" + "5. Volver");
+			eleccion = sca.nextInt();
+			switch (eleccion) {
+			case 1:
+				Pedido p1= new Pedido(null, null, null);
+>>>>>>> Stashed changes
 				break;
 			case 2:
 				break;
