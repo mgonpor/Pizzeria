@@ -31,7 +31,7 @@ public class Main {
 		} while (mMain != 4);
 	}
 
-	public static void menuAdmin(Pizzeria p, String password) {
+	public static void menuAdmin(Pizzeria pizzeria, String password) {
 		Scanner sca = new Scanner(System.in);
 		if (!password.equals("vladi")) {
 			throw new IllegalArgumentException("\nContraseña incorrecta");
@@ -53,49 +53,49 @@ public class Main {
 			case 3:
 				break;
 			case 4:
-				p.verPizzas();
+				pizzeria.verPizzas();
 				break;
 			case 5:
-				p.verPedidos();
+				pizzeria.verPedidos();
 				break;
 			case 6:
-				p.verClientes();
+				pizzeria.verClientes();
 				break;
 			case 7:
 				System.out.print("\nIndique el telefono: ");
 				int tel = sca.nextInt();
-				p.consultarCliente(tel);
+				pizzeria.consultarCliente(tel);
 				break;
 			case 8:
 				System.out.printf("\nIngrediente a buscar: ");
 				String ingr = sca.next();
-				p.consultarPizzaCon(ingr);
+				pizzeria.consultarPizzaCon(ingr);
 				break;
 			case 9:
 				System.out.print("\ningrediente a evitar: ");
 				String ingr2 = sca.next();
-				p.consultarPizzaSin(ingr2);
+				pizzeria.consultarPizzaSin(ingr2);
 				break;
 			case 10:
-				p.consultarPedidosHoy();
+				pizzeria.consultarPedidosHoy();
 				break;
 			case 11:
-				p.consultarPedidosLocal();
+				pizzeria.consultarPedidosLocal();
 				break;
 			case 12:
-				p.consultarPedidosRecoger();
+				pizzeria.consultarPedidosRecoger();
 				break;
 			case 13:
-				p.consultarPedidosDomicilio();
+				pizzeria.consultarPedidosDomicilio();
 				break;
 			case 14:
-				p.mostrarPizza(Pizza.getMasBarata());
+				pizzeria.mostrarPizza(Pizza.getMasBarata());
 				break;
 			case 15:
-				p.mostrarPizza(Pizza.getMasCara());
+				pizzeria.mostrarPizza(Pizza.getMasCara());
 				break;
 			case 16:
-				p.mostrarPedido(Pedido.getUltimoPedido());
+				pizzeria.mostrarPedido(Pedido.getUltimoPedido());
 				break;
 			case 17:
 				System.out.print("\nAdmin saliendo...");
@@ -106,33 +106,24 @@ public class Main {
 		} while (eleccion != 17);
 	}
 
-	public static void menuCliente(Pizzeria p, int id, Scanner sca) {
+	public static void menuCliente(Pizzeria pizzeria, int id, Scanner sca) {
 
 		int eleccion;
 		do {
 			System.out.println("\n~CLIENTES~");
-			System.out.println("1. Realizar un pedido\n" + "2. Ver pizzas\n" + "3. Buscar pizza sin ingrediente\n"
-<<<<<<< Updated upstream
-					+ "4. Buscar pizza con ingrediente\n" + "4. Buscar pizza con ingrediente\n" + "5. Volver");
+			System.out.println("1. Realizar un pedido\n" + "2. Ver pizzas\n" + "3. Buscar pizza sin ingrediente\n"+ "4. Buscar pizza con ingrediente\n" + "4. Buscar pizza con ingrediente\n" + "5. Volver");
 			eleccion = sca.nextInt();
 			switch (eleccion) {
 			case 1:
 				Pedido p1 = new Pedido(null, null, null);
-				p.addPedido(p1);
-=======
-					+ "4. Buscar pizza con ingrediente\n" + "5. Volver");
+				pizzeria.addPedido(p1);
 			eleccion = sca.nextInt();
-			switch (eleccion) {
-			case 1:
-				Pedido p1= new Pedido(null, null, null);
->>>>>>> Stashed changes
-				break;
-			case 2:
-				break;
+			case 2: 
+				
 			case 3:
-				break;
+
 			case 4:
-				p.verPizzas();
+				pizzeria.verPizzas();
 				break;
 			case 5:
 				System.out.print("\nCliente saliendo...");
