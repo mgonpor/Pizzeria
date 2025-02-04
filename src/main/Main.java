@@ -89,13 +89,13 @@ public class Main {
 				p.consultarPedidosDomicilio();
 				break;
 			case 14:
-				p.mostrarPizza(Pizza.getMasBarata());
+				pizzeria.mostrarPizza(pizza.getMasBarata());
 				break;
 			case 15:
-				p.mostrarPizza(Pizza.getMasCara());
+				pizzeria.mostrarPizza(pizza.getMasCara());
 				break;
 			case 16:
-				p.mostrarPedido(Pedido.getUltimoPedido());
+				pizzeria.mostrarPedido(pedido.getUltimoPedido());
 				break;
 			case 17:
 				System.out.print("\nAdmin saliendo...");
