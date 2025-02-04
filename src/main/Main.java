@@ -104,7 +104,7 @@ public class Main {
 				pizzeria.consultarPizzaCon(ingr);
 				break;
 			case 9:
-				System.out.print("\ningrediente a evitar: ");
+				System.out.print("\nIngrediente a evitar: ");
 				String ingr2 = sca.next();
 				pizzeria.consultarPizzaSin(ingr2);
 				break;
@@ -138,23 +138,36 @@ public class Main {
 		} while (eleccion != 17);
 	}
 
-	public static void menuCliente(Pizzeria p, int id, Scanner sca) {
+	public static void menuCliente(Pizzeria pizzeria, int id, Scanner sca) {
 
 		int eleccion;
 		do {
 			System.out.printf("Bienvenido soldado. Prepárate!");
-			System.out.printf("\n1. Realizar un pedido" + "\n2. Ver pizzas" + "3. Buscar pizza sin ingrediente\n"
+			System.out.printf("\n1. Realizar un pedido" + "\n2. Ver pizzas" + "\n3. Buscar pizza sin ingrediente"
 					+ "\n4. Buscar pizza con ingrediente" + "\n5. Volver");
 			eleccion = sca.nextInt();
 			switch (eleccion) {
 			case 1:
-				break;
+				System.out.printf("Cliente (ID): ");
+				int clienteP = sca.nextInt();
+				Cliente cc = pizzeria.getClientePorId(clienteP);
+				System.out.print("Tipo (local, recoger, domicilio): ");
+				String tipo = sca.next();
+				Pedido pedido = new Pedido(cc, LocalDate.now(), tipo);
+				pizzeria.addPedido(pedido);
+			break;
 			case 2:
+				pizzeria.verPizzas();
 				break;
 			case 3:
+				System.out.print("\nIngrediente a evitar: ");
+				String ingr2 = sca.next();
+				pizzeria.consultarPizzaSin(ingr2);
 				break;
 			case 4:
-				p.verPizzas();
+				System.out.printf("\nIngrediente a buscar: ");
+				String ingr = sca.next();
+				pizzeria.consultarPizzaCon(ingr);
 				break;
 			case 5:
 				System.out.print("\nCliente saliendo...");
