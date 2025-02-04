@@ -35,7 +35,7 @@ public class Main {
 		} while (mMain != 4);
 	}
 
-	public static void menuAdmin(Pizzeria pizzeria, String password) {
+	public static void menuAdmin(Pizzeria p, String password) {
 		Scanner sca = new Scanner(System.in);
 		if (!password.equals("vladi")) {
 			throw new IllegalArgumentException("\nContraseña incorrecta");
@@ -64,49 +64,49 @@ public class Main {
 				pizzeria.addPedido(pedido);
 				break;
 			case 4:
-				pizzeria.verPizzas();
+				p.verPizzas();
 				break;
 			case 5:
-				pizzeria.verPedidos();
+				p.verPedidos();
 				break;
 			case 6:
-				pizzeria.verClientes();
+				p.verClientes();
 				break;
 			case 7:
 				System.out.print("\nIndique el telefono: ");
 				int tel = sca.nextInt();
-				pizzeria.consultarCliente(tel);
+				p.consultarCliente(tel);
 				break;
 			case 8:
 				System.out.printf("\nIngrediente a buscar: ");
 				String ingr = sca.next();
-				pizzeria.consultarPizzaCon(ingr);
+				p.consultarPizzaCon(ingr);
 				break;
 			case 9:
 				System.out.print("\ningrediente a evitar: ");
 				String ingr2 = sca.next();
-				pizzeria.consultarPizzaSin(ingr2);
+				p.consultarPizzaSin(ingr2);
 				break;
 			case 10:
-				pizzeria.consultarPedidosHoy();
+				p.consultarPedidosHoy();
 				break;
 			case 11:
-				pizzeria.consultarPedidosLocal();
+				p.consultarPedidosLocal();
 				break;
 			case 12:
-				pizzeria.consultarPedidosRecoger();
+				p.consultarPedidosRecoger();
 				break;
 			case 13:
-				pizzeria.consultarPedidosDomicilio();
+				p.consultarPedidosDomicilio();
 				break;
 			case 14:
-				pizzeria.mostrarPizza(Pizza.getMasBarata());
+				pizzeria.mostrarPizza(pizza.getMasBarata());
 				break;
 			case 15:
-				pizzeria.mostrarPizza(Pizza.getMasCara());
+				pizzeria.mostrarPizza(pizza.getMasCara());
 				break;
 			case 16:
-				pizzeria.mostrarPedido(Pedido.getUltimoPedido());
+				pizzeria.mostrarPedido(pedido.getUltimoPedido());
 				break;
 			case 17:
 				System.out.print("\nAdmin saliendo...");
@@ -127,6 +127,7 @@ public class Main {
 			eleccion = sca.nextInt();
 			switch (eleccion) {
 			case 1:
+				Pedido p1= new Pedido(null, null, null);
 				break;
 			case 2:
 				break;
