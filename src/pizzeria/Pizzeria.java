@@ -117,28 +117,28 @@ public class Pizzeria {
 	}
 
 	public void verPizzas() {
-		System.out.println("------------------------");
-		System.out.println("Pizzas Totales");
+		System.out.println("\n------------------------");
+		System.out.println("\nPizzas Totales");
 		for(Pizza p: listaPizzas) {
 			System.out.printf("\nPizza %d: %s",p.getIdPizza(),p.getNombre());
 		}
-		System.out.println("------------------------");
+		System.out.print("\n------------------------");
 	}
 	public void verPedidos() {
-		System.out.println("------------------------");
-		System.out.println("Pedidos Totales");
+		System.out.print("\n------------------------");
+		System.out.print("\nPedidos Totales");
 		for(Pedido pe: listaPedidos) {
 			System.out.printf("\nNumero de Pedido: %d, cliente: %s",pe.getId(), pe.getCliente().getNombre());
 		}
-		System.out.println("------------------------");
+		System.out.print("\n------------------------");
 	}
 	public void verClientes() {
-		System.out.println("------------------------");
-		System.out.println("Clientes");
+		System.out.print("\n------------------------");
+		System.out.print("\nClientes");
 		for(Cliente c: listaClientes) {
 			System.out.printf("\nCliente %d: %s",c.getIdCliente(),c.getNombre());
 		}
-		System.out.println("------------------------");
+		System.out.print("\n------------------------");
 	}
 	
 	public Cliente getClientePorId(int id) {
@@ -214,7 +214,7 @@ public class Pizzeria {
 		System.out.printf("\nPedidos en el local: ");
 		for(Pedido p:listaPedidos) {
 			if(Tipo.valueOf(p.getTipo()) == Tipo.LOCAL) {
-				System.out.printf("\nId: , cliente: %s", p.getId(), p.getCliente());
+				System.out.printf("\nId: , cliente: %s", p.getId(), p.getCliente().getNombre());
 			}
 		}
 	}
@@ -222,7 +222,7 @@ public class Pizzeria {
 		System.out.printf("\nPedidos en para recoger: ");
 		for(Pedido p:listaPedidos) {
 			if(Tipo.valueOf(p.getTipo()) == Tipo.RECOGER) {
-				System.out.printf("\nId: , cliente: %s", p.getId(), p.getCliente());
+				System.out.printf("\nId: %d, cliente: %s", p.getId(), p.getCliente().getNombre());
 			}
 		}
 	}
@@ -230,7 +230,7 @@ public class Pizzeria {
 		System.out.printf("\nPedidos a domicilio: ");
 		for(Pedido p:listaPedidos) {
 			if(Tipo.valueOf(p.getTipo()) == Tipo.DOMICILIO) {
-				System.out.printf("\nId: , cliente: %s", p.getId(), p.getCliente());
+				System.out.printf("\nId: %d, cliente: %s", p.getId(), p.getCliente().getNombre());
 			}
 		}
 	}
@@ -245,7 +245,7 @@ public class Pizzeria {
 		System.out.printf("\nID: %d "
 				+ "\nCliente: %s, "
 				+ "\nFecha: %.s"
-				+ "\nTipo: %s",pe.getId(),pe.getCliente(),pe.getFecha(),pe.getTipo());
+				+ "\nTipo: %s",pe.getId(),pe.getCliente().getNombre(),pe.getFecha().toString(),pe.getTipo());
 	}
 
 }
