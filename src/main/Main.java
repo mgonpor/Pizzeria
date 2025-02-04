@@ -167,8 +167,8 @@ public class Main {
 					if(opcion!=0) {
 						pedido.addPizza(pizzeria.getPizzaPorId(opcion));
 					}
-					pedido.mostrarPizzasDelPedido();
 				}while(opcion!=0);
+				pedido.mostrarPizzasDelPedido();
 				pizzeria.addPedido(pedido);
 			break;
 			case 2:

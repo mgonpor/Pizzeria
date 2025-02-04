@@ -216,7 +216,7 @@ public class Pizzeria {
 		System.out.printf("\nPedidos en el local: ");
 		for(Pedido p:listaPedidos) {
 			if(Tipo.valueOf(p.getTipo()) == Tipo.LOCAL) {
-				System.out.printf("\nId: , cliente: %s", p.getId(), p.getCliente().getNombre());
+				System.out.printf("\nId: %d, cliente: %s", p.getId(), p.getCliente().getNombre());
 			}
 		}
 	}
