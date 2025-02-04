@@ -25,6 +25,7 @@ public class Main {
 				equipoA.verClientes();
 				System.out.print("\nIndique qué cliente es: ");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 				int idCliente = sca.nextInt();
 				menuCliente(equipoA, idCliente);
 				break;
@@ -49,6 +50,17 @@ public class Main {
 		} while (mMain != 4);
 	}
 
+=======
+				int cliente = sca.nextInt();
+				menuCliente(equipoA, cliente, sca);
+			default:
+				System.out.print("\nElige una opción válida: ");
+			}
+
+		} while (mMain != 4);
+	}
+
+>>>>>>> Stashed changes
 	public static void menuAdmin(Pizzeria p, String password) {
 >>>>>>> Stashed changes
 		Scanner sca = new Scanner(System.in);
@@ -66,6 +78,7 @@ public class Main {
 			eleccion = sca.nextInt();
 			switch (eleccion) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			case 1: 
 				System.out.print("\nNombre: ");
 				String nombre = sca.next();
@@ -75,6 +88,9 @@ public class Main {
 				String ingredientes = sca.next();
 				Pizza pizza = new Pizza(nombre, precio, ingredientes);
 				pizzeria.addPizza(pizza);
+=======
+			case 1:
+>>>>>>> Stashed changes
 =======
 			case 1:
 >>>>>>> Stashed changes
@@ -109,9 +125,12 @@ public class Main {
 				pizzeria.verPedidos();
 				break;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			case 6: 
 				pizzeria.verClientes();
 =======
+=======
+>>>>>>> Stashed changes
 			case 6:
 				p.verClientes();
 >>>>>>> Stashed changes
