@@ -1,8 +1,12 @@
 package main;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
-import pizzeria.*;
+import pizzeria.Cliente;
+import pizzeria.Pedido;
+import pizzeria.Pizza;
+import pizzeria.Pizzeria;
 
 public class Main {
 
@@ -51,6 +55,13 @@ public class Main {
 			case 2:
 				break;
 			case 3:
+				System.out.printf("Cliente (ID): ");
+				int clienteP = sca.nextInt();
+				Cliente cc = pizzeria.getClientePorId(clienteP);
+				System.out.print("Tipo (local, recoger, domicilio): ");
+				String tipo = sca.next();
+				Pedido pedido = new Pedido(cc, LocalDate.now(), tipo);
+				pizzeria.addPedido(pedido);
 				break;
 			case 4:
 				pizzeria.verPizzas();
@@ -106,30 +117,29 @@ public class Main {
 		} while (eleccion != 17);
 	}
 
-	public static void menuCliente(Pizzeria pizzeria, int id, Scanner sca) {
+	public static void menuCliente(Pizzeria p, int id, Scanner sca) {
 
 		int eleccion;
 		do {
 			System.out.println("\n~CLIENTES~");
-			System.out.println("1. Realizar un pedido\n" + "2. Ver pizzas\n" + "3. Buscar pizza sin ingrediente\n"+ "4. Buscar pizza con ingrediente\n" + "4. Buscar pizza con ingrediente\n" + "5. Volver");
+			System.out.println("1. Realizar un pedido\n" + "2. Ver pizzas\n" + "3. Buscar pizza sin ingrediente\n"
+					+ "4. Buscar pizza con ingrediente\n" + "5. Volver");
 			eleccion = sca.nextInt();
 			switch (eleccion) {
 			case 1:
-				Pedido p1 = new Pedido(null, null, null);
-				pizzeria.addPedido(p1);
-			eleccion = sca.nextInt();
-			case 2: 
-				
+				break;
+			case 2:
+				break;
 			case 3:
-
+				break;
 			case 4:
-				pizzeria.verPizzas();
+				p.verPizzas();
 				break;
 			case 5:
 				System.out.print("\nCliente saliendo...");
 				break;
 			default:
-				System.out.print("\nElige entre 1 y 5.");
+				System.out.print("\nElige entre 1 y 17.");
 
 			}
 		} while (eleccion != 5);
