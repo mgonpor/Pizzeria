@@ -131,6 +131,7 @@ public class Pizzeria {
 		for(Pedido pe: listaPedidos) {
 			System.out.printf("\nNumero de Pedido: %d, cliente: %s",pe.getId(), pe.getCliente().getNombre());
 			pe.mostrarPizzasDelPedido();
+			System.out.printf("\n	Total: %.02f", pe.getTotal());
 		}
 		System.out.print("\n------------------------");
 	}

@@ -169,6 +169,7 @@ public class Main {
 					}
 				}while(opcion!=0);
 				pedido.mostrarPizzasDelPedido();
+				System.out.printf("\n	Total: %.02f", pedido.getTotal());
 				pizzeria.addPedido(pedido);
 			break;
 			case 2:
