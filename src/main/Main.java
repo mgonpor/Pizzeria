@@ -82,6 +82,14 @@ public class Main {
 				System.out.print("Tipo (local, recoger, domicilio): ");
 				String tipo = sca.next();
 				Pedido pedido = new Pedido(cc, LocalDate.now(), tipo);
+				int opcion=0;
+				do {
+					System.out.println("\nDime la pizza que quieras añadir (0 finaliza pedido): ");
+					opcion = sca.nextInt();
+					if(opcion!=0) {
+						pedido.addPizza(pizzeria.getPizzaPorId(opcion));
+					}
+				}while(opcion!=0);
 				pizzeria.addPedido(pedido);
 				break;
 			case 4:
@@ -154,6 +162,14 @@ public class Main {
 				System.out.print("Tipo (local, recoger, domicilio): ");
 				String tipo = sca.next();
 				Pedido pedido = new Pedido(cc, LocalDate.now(), tipo);
+				int opcion=0;
+				do {
+					System.out.println("\nDime la pizza que quieras añadir (0 finaliza pedido): ");
+					opcion = sca.nextInt();
+					if(opcion!=0) {
+						pedido.addPizza(pizzeria.getPizzaPorId(opcion));
+					}
+				}while(opcion!=0);
 				pizzeria.addPedido(pedido);
 			break;
 			case 2:

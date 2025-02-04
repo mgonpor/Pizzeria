@@ -39,8 +39,7 @@ public class Pizzeria {
 		if(encontrado) {
 			throw new IllegalArgumentException("Esta pizza ya está añadida");
 		}
-		
-		this.listaPizzas.remove(pizza);	
+		this.listaPizzas.add(pizza);	
 	}
 
 	public void removePizza(Pizza pizza) {
