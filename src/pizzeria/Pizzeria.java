@@ -221,7 +221,7 @@ public class Pizzeria {
 		System.out.printf("\nID: %d "
 				+ "\nCliente: %s, "
 				+ "\nFecha: %.s"
-				+ "\nTipo: %s",pe.getId(),pe.getFecha(),pe.getTipo());
+				+ "\nTipo: %s",pe.getId(),pe.getCliente(),pe.getFecha(),pe.getTipo());
 	}
 
 }
