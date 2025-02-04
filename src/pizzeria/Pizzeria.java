@@ -8,7 +8,7 @@ import enumerados.Tipo;
 
 public class Pizzeria {
 	private String nombre;
-	private List<TipoPizza> listaPizzas;
+	private List<Pizza> listaPizzas;
 	private List<Pedido> listaPedidos;
 	private List<Cliente> listaClientes;
 
@@ -16,7 +16,7 @@ public class Pizzeria {
 		setNombre(nombre);
 		this.listaClientes = new ArrayList<Cliente>();
 		this.listaPedidos = new ArrayList<Pedido>();
-		this.listaPizzas = new ArrayList<TipoPizza>();
+		this.listaPizzas = new ArrayList<Pizza>();
 
 	}
 

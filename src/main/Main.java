@@ -14,13 +14,13 @@ public class Main {
 		int mCliente;
 
 		System.out.println("Bienvenido a la Pizzeria del EquipoA");
-		pizzeria.MenuMain.menu();
+		main.MenuMain.menu();
 		do {
 
 			mMain = sca.nextInt();
 
 			if (mMain == 1) {
-				pizzeria.MenuMain.menuPizza();
+				main.MenuMain.menuPizza();
 				mPizza = sca.nextInt();
 				switch (mPizza) {
 				case 1: 
@@ -38,15 +38,15 @@ public class Main {
 				case 7:
 					break;
 				case 8:
-					pizzeria.MenuMain.menu();
+					main.MenuMain.menu();
 					break;
 				default:
-					System.out.println("\n\nIntroduce una opción correcta: ");
-					pizzeria.MenuMain.menuPizza();
+					System.out.println("\n\nIntroduce una opciï¿½n correcta: ");
+					main.MenuMain.menuPizza();
 					break;
 				}
 			} else if (mMain == 2) {
-				pizzeria.MenuMain.menuPedidos();
+				main.MenuMain.menuPedidos();
 				mPedido = sca.nextInt();
 				switch (mPedido) {
 				case 1:
@@ -64,15 +64,15 @@ public class Main {
 				case 7:
 					break;
 				case 8:
-					pizzeria.MenuMain.menu();
+					main.MenuMain.menu();
 					break;
 				default:
-					System.out.println("\n\nIntroduce una opción correcta: ");
-					pizzeria.MenuMain.menuPedidos();
+					System.out.println("\n\nIntroduce una opciï¿½n correcta: ");
+					main.MenuMain.menuPedidos();
 					break;
 				}
 			} else if (mMain == 3) {
-				pizzeria.MenuMain.menuCliente();
+				main.MenuMain.menuCliente();
 				mCliente = sca.nextInt();
 				switch(mCliente) {
 				case 1:
@@ -93,10 +93,5 @@ public class Main {
 		} while (mMain != 4);
 	}
 
-	public static Pizza nuevaPizza(Scanner sc) {
-		System.out.print("nombre ");
-		String nombre = sc.next();
-		return new Pizza(nombre, 19, "jajajajajaj");
-	}
 
 }

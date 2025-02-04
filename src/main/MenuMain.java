@@ -1,15 +1,15 @@
-package pizzeria;
+package main;
 
 public class MenuMain {
 	public static void menu() {
-		System.out.println("Escoga una opción:\n" + "1. Pizzas\n" + "2. Pedidos\n" + "3. Clientes\n" + "4. Salir");
+		System.out.println("Escoga una opciï¿½n:\n" + "1. Pizzas\n" + "2. Pedidos\n" + "3. Clientes\n" + "4. Salir");
 	}
 
 	public static void menuPizza() {
 		System.out.println("~PIZZAS~");
-		System.out.println("Escoga una opción:\n" + "1. Nueva Piezza\n" +"2. Eliminar Pizza" +"3. Ver Pizzas\n"
-				+ "4. Buscar Pizzas con Ingredientes\n" + "5. Buscar Pizzas sin Ingredientes\n" + "6. Pizza más Cara\n"
-				+ "7. Pizza más Barata\n" + "8. Volver");
+		System.out.println("Escoga una opciï¿½n:\n" + "1. Nueva Piezza\n" +"2. Eliminar Pizza" +"3. Ver Pizzas\n"
+				+ "4. Buscar Pizzas con Ingredientes\n" + "5. Buscar Pizzas sin Ingredientes\n" + "6. Pizza mï¿½s Cara\n"
+				+ "7. Pizza mï¿½s Barata\n" + "8. Volver");
 	}
 
 	public static void menuPedidos() {
@@ -20,7 +20,7 @@ public class MenuMain {
 				+ "4. Pedidos consumidos en el local\n"
 				+ "5. Pedidos para recoger\n"
 				+ "6. Pedidos a domicilio\n"
-				+ "7. Último pedido Realizado\n"
+				+ "7. ï¿½ltimo pedido Realizado\n"
 				+ "8. Volver");
 	}
 	
@@ -29,7 +29,7 @@ public class MenuMain {
 		System.out.println("1. Nuevo Cliente\n"
 				+ "2. Ver Clientes\n"
 				+ "3. Eliminar Cliente\n"
-				+ "4. Consultar Cliente por su teléfono\n"
+				+ "4. Consultar Cliente por su telï¿½fono\n"
 				+ "5. Volver");
 	}
 	
