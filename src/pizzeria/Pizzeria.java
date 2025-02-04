@@ -141,11 +141,30 @@ public class Pizzeria {
 		}
 		System.out.println("------------------------");
 	}
-	public void getClientePorId(int id) {
-		Cliente c;
-		for(int i=0; i<listaClientes.size(); i++) {
-			
+	
+	public Cliente getClientePorId(int id) {
+		Cliente c = null;
+		for(Cliente cc:listaClientes) {
+			if(cc.getIdCliente() == id) {
+				c=cc;
+			}
 		}
+		if(c == null) {
+			throw new IllegalArgumentException("No existe un cliente con ese id");
+		}
+		return c;
+	}
+	public Pizza getPizzaPorId(int id) {
+		Pizza p = null;
+		for(Pizza pp:listaPizzas) {
+			if(pp.getIdPizza() == id) {
+				p=pp;
+			}
+		}
+		if(p == null) {
+			throw new IllegalArgumentException("No existe una pizza con ese id");
+		}
+		return p;
 	}
 	
 	public void consultarCliente(int telefono) {
