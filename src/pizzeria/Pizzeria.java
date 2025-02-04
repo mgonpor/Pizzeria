@@ -141,6 +141,12 @@ public class Pizzeria {
 		}
 		System.out.println("------------------------");
 	}
+	public void getClientePorId(int id) {
+		Cliente c;
+		for(int i=0; i<listaClientes.size(); i++) {
+			
+		}
+	}
 	
 	public void consultarCliente(int telefono) {
 		boolean existe = false;

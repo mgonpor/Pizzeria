@@ -1,5 +1,6 @@
 package main;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 import pizzeria.*;
@@ -19,20 +20,24 @@ public class Main {
 				System.out.print("\nContraseña: ");
 				String password = sca.next();
 				menuAdmin(equipoA, password);
+				break;
 			case 2:
 				equipoA.verClientes();
 				System.out.print("\nIndique qué cliente es: ");
-				int cliente = sca.nextInt();
-				menuCliente(equipoA, cliente);
+				int idCliente = sca.nextInt();
+				menuCliente(equipoA, idCliente);
+				break;
+			case 3: 
+				System.out.printf("\nSaliendo del sistema...");
 			default:
 				System.out.print("\nElige una opción válida: ");
 			}
 			
-		} while (mMain != 4);
+		} while (mMain != 3);
 	}
 
 	
-	public static void menuAdmin(Pizzeria p, String password) {
+	public static void menuAdmin(Pizzeria pizzeria, String password) {
 		Scanner sca = new Scanner(System.in);
 		if(!password.equals("vladi")) {
 			throw new IllegalArgumentException("\nContraseña incorrecta");
@@ -59,46 +64,72 @@ public class Main {
 			eleccion = sca.nextInt();
 			switch (eleccion) {
 			case 1: 
+				System.out.print("\nNombre: ");
+				String nombre = sca.next();
+				System.out.print("\nPrecio: ");
+				double precio = sca.nextDouble();
+				System.out.print("\nIngredientes (sin espacios): ");
+				String ingredientes = sca.next();
+				Pizza pizza = new Pizza(nombre, precio, ingredientes);
+				pizzeria.addPizza(pizza);
 				break;
 			case 2:
+				System.out.print("\nNombre: ");
+				String nombreC = sca.next();
+				System.out.print("\nDireccion: ");
+				String direccion = sca.next();
+				System.out.print("\nEmail: ");
+				String email = sca.next();
+				System.out.print("\nTelefono: ");
+				int telC = sca.nextInt();
+				System.out.print("\nSaldo: ");
+				double saldo = sca.nextDouble();
+				Cliente cliente = new Cliente(nombreC, direccion, email, telC, saldo);
+				pizzeria.addCliente(cliente);
 				break;
 			case 3:
+				System.out.printf("Cliente (ID): ");
+				int clienteP = sca.nextInt();
+				System.out.print("Tipo (local, recoger, domicilio): ");
+				String tipo = sca.next();
+				Pedido pedido = new Pedido(clienteP, LocalDate.now(), tipo);
+				pizzeria.addPedido(pedido);
 				break;
 			case 4:
-				p.verPizzas();
+				pizzeria.verPizzas();
 				break;
 			case 5:
-				p.verPedidos();
+				pizzeria.verPedidos();
 				break;
 			case 6: 
-				p.verClientes();
+				pizzeria.verClientes();
 				break;
 			case 7:
 				System.out.print("\nIndique el telefono: ");
 				int tel = sca.nextInt();
-				p.consultarCliente(tel);
+				pizzeria.consultarCliente(tel);
 				break;
 			case 8:
 				System.out.printf("\nIngrediente a buscar: ");
 				String ingr = sca.next();
-				p.consultarPizzaCon(ingr);
+				pizzeria.consultarPizzaCon(ingr);
 				break;
 			case 9:
 				System.out.print("\ningrediente a evitar: ");
 				String ingr2 = sca.next();
-				p.consultarPizzaSin(ingr2);
+				pizzeria.consultarPizzaSin(ingr2);
 				break;
 			case 10:
-				p.consultarPedidosHoy();
+				pizzeria.consultarPedidosHoy();
 				break;
 			case 11:
-				p.consultarPedidosLocal();
+				pizzeria.consultarPedidosLocal();
 				break;
 			case 12:
-				p.consultarPedidosRecoger();
+				pizzeria.consultarPedidosRecoger();
 				break;
 			case 13:
-				p.consultarPedidosDomicilio();
+				pizzeria.consultarPedidosDomicilio();
 				break;
 			case 14:
 				p.mostrarPizza(Pizza.getMasBarata());
