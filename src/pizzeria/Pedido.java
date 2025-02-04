@@ -98,11 +98,11 @@ public class Pedido {
 	
 	public void mostrarPizzasDelPedido() {
 		if(pizzas.size()<=0) {
-			System.out.printf("\nNinguna añadida aún");
+			System.out.printf("\n	Ninguna añadida aún");
 		}
 		for(Pizza p:pizzas) {
-			System.out.printf("\nID: %d, Nombre: %s, Precio: %.02f"
-					+ "\nIngredientes: %s",p.getIdPizza(),p.getNombre(),p.getPrecio(),p.getIngredientes());
+			System.out.printf("\n	ID: %d, Nombre: %s, Precio: %.02f"
+					+ "\n	Ingredientes: %s",p.getIdPizza(),p.getNombre(),p.getPrecio(),p.getIngredientes());
 		}
 	}
 }
