@@ -37,6 +37,7 @@ public class Pedido {
 		return fecha;
 	}
 	public double getTotal() {
+		calcularTotal();
 		return total;
 	}
 	public String getTipo() {
