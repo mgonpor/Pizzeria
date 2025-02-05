@@ -63,7 +63,7 @@ public class Cliente {
 		return telefono;
 	}
 	public void setTelefono(String telefono) {
-		if(telefono.length() > 100000000 || telefono.length() < 0) {
+		if(telefono.length() != 9) {
 			throw new IllegalArgumentException("El telefono no es válido");
 		}
 		this.telefono = telefono;
