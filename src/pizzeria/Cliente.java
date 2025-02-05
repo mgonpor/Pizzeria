@@ -9,12 +9,12 @@ public class Cliente {
 	private String nombre;
 	private String direccion;
 	private String email;
-	private int telefono;
+	private String telefono;
 	private double dineroDisponible;
 	
 	
 	// Constructores
-	public Cliente(String nombre, String direccion, String email, int telefono, double dineroDisponible) {
+	public Cliente(String nombre, String direccion, String email, String telefono, double dineroDisponible) {
 		setNombre(nombre);
 		setDireccion(direccion);
 		setEmail(email);
@@ -22,7 +22,7 @@ public class Cliente {
 		setDineroDisponible(dineroDisponible);
 		this.idCliente=idClienteAutoIncrement++;
 	}
-	public Cliente(String nombre, String direccion, String email, int telefono) {
+	public Cliente(String nombre, String direccion, String email, String telefono) {
 		setNombre(nombre);
 		setDireccion(direccion);
 		setEmail(email);
@@ -59,11 +59,11 @@ public class Cliente {
 		}
 		this.email = email;
 	}
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
-	public void setTelefono(int telefono) {
-		if(telefono > 1000000000 || telefono < 0) {
+	public void setTelefono(String telefono) {
+		if(telefono.length() > 100000000 || telefono.length() < 0) {
 			throw new IllegalArgumentException("El telefono no es válido");
 		}
 		this.telefono = telefono;

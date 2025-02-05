@@ -169,7 +169,7 @@ public class Pizzeria {
 		return p;
 	}
 	
-	public void consultarCliente(int telefono) {
+	public void consultarCliente(String telefono) {
 		boolean existe = false;
 		for(Cliente elem:listaClientes) {
 			if(elem.getTelefono() == telefono) {

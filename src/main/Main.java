@@ -71,7 +71,7 @@ public class Main {
 				System.out.print("\nEmail: ");
 				String email = sca.next();
 				System.out.print("\nTelefono: ");
-				int tel = sca.nextInt();
+				String tel = sca.next();
 				System.out.print("\nDinero disponible: ");
 				double dineroDisponible = sca.nextDouble();
 				Cliente cliente = new Cliente(nombreC, direccion, email, tel, dineroDisponible);
@@ -105,7 +105,7 @@ public class Main {
 				break;
 			case 7:
 				System.out.print("\nIndique el telefono: ");
-				int telBuscar = sca.nextInt();
+				String telBuscar = sca.next();
 				pizzeria.consultarCliente(telBuscar);
 				break;
 			case 8:
