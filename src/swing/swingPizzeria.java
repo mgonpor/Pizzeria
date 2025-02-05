@@ -24,27 +24,33 @@ public class swingPizzeria<LocalDate> extends JFrame {
         pedidos = new ArrayList<>();
 
         setTitle("Pizzeria Equipo A");
-        setSize(910, 752);
+        setSize(841, 680);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         getContentPane().setLayout(new BorderLayout());
 
-        JPanel clientePanel = new JPanel(new GridLayout(4,4));
+        JPanel clientePanel = new JPanel(new GridLayout(6,1));
         JLabel label = new JLabel("Nombre del Cliente:");
         label.setForeground(new Color(255, 128, 0));
         label.setBackground(new Color(255, 0, 0));
         clientePanel.add(label);
         nombreClienteField = new JTextField();
+        nombreClienteField.setEnabled(false);
         clientePanel.add(nombreClienteField);
-        clientePanel.add(new JLabel("Direción del Cliente:"));
+        JLabel label_1 = new JLabel("Direción del Cliente:");
+        clientePanel.add(label_1);
         direccionClienteField = new JTextField();
         clientePanel.add(direccionClienteField);
-        clientePanel.add(new JLabel("Email del Cliente:"));
+        JLabel label_2 = new JLabel("Teléfono del Cliente:");
+        clientePanel.add(label_2);
         emailClienteField = new JTextField();
         clientePanel.add(emailClienteField);
-        clientePanel.add(new JLabel("Teléfono del Cliente:"));
+        JLabel label_3 = new JLabel("Email del Cliente:");
+        clientePanel.add(label_3);
         telefonoClienteField = new JTextField();
         clientePanel.add(telefonoClienteField);
+
+        getContentPane().add(clientePanel, BorderLayout.NORTH);
         
 
         JButton agregarClienteButton = new JButton("Agregar Cliente");
@@ -61,8 +67,6 @@ public class swingPizzeria<LocalDate> extends JFrame {
             }
         });
 
-        getContentPane().add(clientePanel, BorderLayout.NORTH);
-
         pedidosArea = new JTextArea();
         pedidosArea.setBackground(new Color(255, 255, 0));
         getContentPane().add(new JScrollPane(pedidosArea), BorderLayout.CENTER);
@@ -73,7 +77,7 @@ public class swingPizzeria<LocalDate> extends JFrame {
 
         pedidoPanel.add(descripcionField, BorderLayout.CENTER);
         JButton agregarPedidoButton = new JButton("Agregar Pedido");
-        pedidoPanel.add(agregarPedidoButton, BorderLayout.EAST);
+        pedidoPanel.add(agregarPedidoButton, BorderLayout.WEST);
         agregarPedidoButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String descripcion = descripcionField.getText();
