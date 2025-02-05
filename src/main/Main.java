@@ -20,20 +20,22 @@ public class Main {
 			System.out.print("\nEscoga una opción:\n" + "1. Admin\n" + "2. Cliente");
 			mMain = sca.nextInt();
 			switch (mMain) {
-			case 1:
-				System.out.print("\nContraseña: ");
-				String password = sca.next();
-				menuAdmin(equipoA, password);
-			case 2:
-				equipoA.verClientes();
-				System.out.print("\nIndique qué cliente es: ");
-				int cliente = sca.nextInt();
-				menuCliente(equipoA, cliente, sca, equipoA.getClientePorId(cliente));
-			default:
-				System.out.print("\nElige una opción válida: ");
+				case 1:
+					System.out.print("\nContraseña: ");
+					String password = sca.next();
+					menuAdmin(equipoA, password);
+				case 2:
+					equipoA.verClientes();
+					System.out.print("\nIndique qué cliente es: ");
+					int cliente = sca.nextInt();
+					menuCliente(equipoA, cliente, sca, equipoA.getClientePorId(cliente));
+				case 3:
+					System.out.print("\nSaliendo del sistema...");
+				default:
+					System.out.print("\nElige una opción válida: ");
 			}
 
-		} while (mMain != 4);
+		} while (mMain != 3);
 	}
 
 	public static void menuAdmin(Pizzeria pizzeria, String password) {

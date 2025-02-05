@@ -63,8 +63,6 @@ public class Pedido {
 		this.tipo = Tipo.valueOf(tipo.toUpperCase());
 	}
 	
-	
-	
 	public void addPizza(Pizza pizza) {
 		this.pizzas.add(pizza);
 	}
