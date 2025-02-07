@@ -37,6 +37,7 @@ public class Pedido {
 		return fecha;
 	}
 	public double getTotal() {
+		calcularTotal();
 		return total;
 	}
 	public String getTipo() {
@@ -61,8 +62,6 @@ public class Pedido {
 	public void setTipo(String tipo) {
 		this.tipo = Tipo.valueOf(tipo.toUpperCase());
 	}
-	
-	
 	
 	public void addPizza(Pizza pizza) {
 		this.pizzas.add(pizza);
