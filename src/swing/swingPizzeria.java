@@ -5,13 +5,21 @@ import javax.swing.*;
 import java.awt.*;
 
 	public class swingPizzeria extends JFrame {
-		private Button boton;
-		private Label Titulos;
+		private JButton boton;
+	    private JLabel Titulos;
 		
 		public swingPizzeria() {
-		setTitle("Pizzería");
+		setTitle("Pizzería Equipo A");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
+        
+        add(new JLabel("Elije la interfaz tuya"));
+        String[] Menus = {};
+        boton = new JButton("Interfaces");
+        add(boton);
+        
+        
+        
 		}
 	}
