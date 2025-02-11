@@ -13,26 +13,30 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sca = new Scanner(System.in);
 		int mMain;
-		System.out.println("Bienvenido a la Pizzeria del EquipoA!"
-				+ "\n----------------------------------------");
+		System.out.println("Bienvenido a la Pizzeria del EquipoA!" + "\n----------------------------------------");
 		Pizzeria equipoA = new Pizzeria("equipoA");
+		Pizza p1 = new Pizza("Kebab", 200, "salsa,carne");
+		equipoA.addPizza(p1);
+		Cliente c1 = new Cliente("Fran", "Fran", "fran", "674057757");
+		equipoA.addCliente(c1);
+
 		do {
 			System.out.print("\nEscoga una opción:\n" + "1. Admin\n" + "2. Cliente");
 			mMain = sca.nextInt();
 			switch (mMain) {
-				case 1:
-					System.out.print("\nContraseña: ");
-					String password = sca.next();
-					menuAdmin(equipoA, password);
-				case 2:
-					equipoA.verClientes();
-					System.out.print("\nIndique qué cliente es: ");
-					int cliente = sca.nextInt();
-					menuCliente(equipoA, cliente, sca, equipoA.getClientePorId(cliente));
-				case 3:
-					System.out.print("\nSaliendo del sistema...");
-				default:
-					System.out.print("\nElige una opción válida: ");
+			case 1:
+				System.out.print("\nContraseña: ");
+				String password = sca.next();
+				menuAdmin(equipoA, password);
+			case 2:
+				equipoA.verClientes();
+				System.out.print("\nIndique qué cliente es: ");
+				int cliente = sca.nextInt();
+				menuCliente(equipoA, cliente, sca, equipoA.getClientePorId(cliente));
+			case 3:
+				System.out.print("\nSaliendo del sistema...");
+			default:
+				System.out.print("\nElige una opción válida: ");
 			}
 
 		} while (mMain != 3);
@@ -83,15 +87,15 @@ public class Main {
 				Cliente cc = pizzeria.getClientePorId(clienteP);
 				System.out.print("Tipo (local, recoger, domicilio): ");
 				String tipo = sca.next();
-				Pedido pedido = new Pedido(cc, LocalDate.now(), tipo);
-				int opcion=0;
+				Pedido pedido = new Pedido(cc, tipo);
+				int opcion = 0;
 				do {
 					System.out.println("\nDime la pizza que quieras añadir (0 finaliza pedido): ");
 					opcion = sca.nextInt();
-					if(opcion!=0) {
+					if (opcion != 0) {
 						pedido.addPizza(pizzeria.getPizzaPorId(opcion));
 					}
-				}while(opcion!=0);
+				} while (opcion != 0);
 				pizzeria.addPedido(pedido);
 				break;
 			case 4:
@@ -131,10 +135,10 @@ public class Main {
 				pizzeria.consultarPedidosDomicilio();
 				break;
 			case 14:
-				pizzeria.mostrarPizza(Pizza.getMasBarata());
+				pizzeria.mostrarPizza(Pizza.getMasCara());
 				break;
 			case 15:
-				pizzeria.mostrarPizza(Pizza.getMasCara());
+				pizzeria.mostrarPizza(Pizza.getMasBarata());
 				break;
 			case 16:
 				pizzeria.mostrarPedido(Pedido.getUltimoPedido());
@@ -152,8 +156,7 @@ public class Main {
 
 		int eleccion;
 		do {
-			System.out.printf("\n----------------------"
-					+ "\nBienvenido soldado. Prepárate!");
+			System.out.printf("\n----------------------" + "\nBienvenido soldado. Prepárate!");
 			System.out.printf("\n1. Realizar un pedido" + "\n2. Ver pizzas" + "\n3. Buscar pizza sin ingrediente"
 					+ "\n4. Buscar pizza con ingrediente" + "\n5. Volver");
 			eleccion = sca.nextInt();
@@ -161,19 +164,27 @@ public class Main {
 			case 1:
 				System.out.print("Tipo (local, recoger, domicilio): ");
 				String tipo = sca.next();
-				Pedido pedido = new Pedido(cliente, LocalDate.now(), tipo);
-				int opcion=0;
+				Pedido pedido = new Pedido(cliente, tipo);
+				int opcion = 0;
+				int opcion2 = 0;
 				do {
 					System.out.println("\nDime la pizza que quieras añadir (0 finaliza pedido): ");
 					opcion = sca.nextInt();
-					if(opcion!=0) {
+					if (opcion != 0) {
 						pedido.addPizza(pizzeria.getPizzaPorId(opcion));
 					}
-				}while(opcion!=0);
+				} while (opcion != 0);
+				do {
 				pedido.mostrarPizzasDelPedido();
 				System.out.printf("\n	Total: %.02f", pedido.getTotal());
+				System.out.println("\n ¿Desea elminar alguna Pizza del pedido? (0 para no eliminar ninguna)");
+				opcion2 = sca.nextInt();
+					if (opcion2 != 0) {
+						pedido.removePizza(pizzeria.getPizzaPorId(opcion2));
+					}
+				} while (opcion2 != 0);
 				pizzeria.addPedido(pedido);
-			break;
+				break;
 			case 2:
 				pizzeria.verPizzas();
 				break;

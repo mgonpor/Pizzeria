@@ -19,14 +19,15 @@ public class Pedido {
 	private static Pedido ultimoPedido;
 	
 	
-	public Pedido(Cliente cliente, LocalDate fecha, String tipo) {   
+	public Pedido(Cliente cliente, String tipo) {   
 		this.id = ultimoId++;
 		setCliente(cliente);
-		setFecha(fecha);
+		this.fecha = LocalDate.now();
 		setTipo(tipo);
 		this.pizzas = new ArrayList<Pizza>();
 		ultimoPedido = this;
 	}
+	
 	public int getId() {
 		return id;
 	}
@@ -56,9 +57,6 @@ public class Pedido {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	public void setFecha(LocalDate fecha) {
-		this.fecha = fecha;
-	}
 	public void setTipo(String tipo) {
 		this.tipo = Tipo.valueOf(tipo.toUpperCase());
 	}
@@ -70,6 +68,7 @@ public class Pedido {
 		boolean dentro = false;
 		for(Pizza p:pizzas) {
 			if(p == pizza) {
+//				this.total -= pizza.getPrecio();
 				dentro=true;
 				break;
 			}
@@ -90,6 +89,7 @@ public class Pedido {
 		if(pizzas.size()<1) {
 			throw new IllegalArgumentException("El pedido está vacío.");
 		}
+		this.total = 0.0;
 		for(Pizza p:pizzas) {
 			this.total += p.getPrecio();
 		}

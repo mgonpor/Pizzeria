@@ -172,7 +172,7 @@ public class Pizzeria {
 	public void consultarCliente(String telefono) {
 		boolean existe = false;
 		for(Cliente elem:listaClientes) {
-			if(elem.getTelefono() == telefono) {
+			if(elem.getTelefono().contains(telefono)) {
 				existe=true;
 				System.out.printf("\n%d:%s",elem.getIdCliente(), elem.getNombre());
 			}
@@ -216,7 +216,7 @@ public class Pizzeria {
 	public void consultarPedidosLocal() {
 		System.out.printf("\nPedidos en el local: ");
 		for(Pedido p:listaPedidos) {
-			if(Tipo.valueOf(p.getTipo()) == Tipo.LOCAL) {
+			if(Tipo.valueOf(p.getTipo()).equals(Tipo.LOCAL)) {
 				System.out.printf("\nId: %d, cliente: %s", p.getId(), p.getCliente().getNombre());
 			}
 		}
@@ -224,7 +224,7 @@ public class Pizzeria {
 	public void consultarPedidosRecoger() {
 		System.out.printf("\nPedidos en para recoger: ");
 		for(Pedido p:listaPedidos) {
-			if(Tipo.valueOf(p.getTipo()) == Tipo.RECOGER) {
+			if(Tipo.valueOf(p.getTipo()).equals(Tipo.RECOGER)) {
 				System.out.printf("\nId: %d, cliente: %s", p.getId(), p.getCliente().getNombre());
 			}
 		}
@@ -232,7 +232,7 @@ public class Pizzeria {
 	public void consultarPedidosDomicilio() {
 		System.out.printf("\nPedidos a domicilio: ");
 		for(Pedido p:listaPedidos) {
-			if(Tipo.valueOf(p.getTipo()) == Tipo.DOMICILIO) {
+			if(Tipo.valueOf(p.getTipo()).equals(Tipo.DOMICILIO)) {
 				System.out.printf("\nId: %d, cliente: %s", p.getId(), p.getCliente().getNombre());
 			}
 		}
